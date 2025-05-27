@@ -1,0 +1,32 @@
+{% extends "core/sidebar_layout.html" %}
+
+{% block main_content %}
+<div class="container mt-4">
+    <h2>Goat List</h2>
+    <a href="{% url 'add_goat' %}" class="btn btn-primary mb-3">Add New Goat</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Breed</th>
+                <th>Birth Date</th>
+                <th>Weight (kg)</th>
+                <th>Health Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for goat in goats %}
+            <tr>
+                <td>{{ goat.name }}</td>
+                <td>{{ goat.breed }}</td>
+                <td>{{ goat.birth_date }}</td>
+                <td>{{ goat.weight }}</td>
+                <td>{{ goat.health_notes }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="5">No goats available.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
