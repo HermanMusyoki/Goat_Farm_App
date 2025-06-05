@@ -1,0 +1,49 @@
+{% extends "core/sidebar_layout.html" %}
+{% block content %}
+
+
+
+<div class="card">
+  <div class="card-header"><strong>
+    	{{ customer_record.name }}</strong>
+  </div>
+  <div class="card-body">
+
+
+
+<p class="card-text">
+<strong>Name: </strong>{{ customer_record.name }}</p>
+
+<p class="card-text">
+<strong>Breed: </strong>{{ customer_record.breed }}
+</p>
+
+<p class="card-text">
+<strong>Tag No: </strong>{{ customer_record.tag_no }}
+</p>
+
+<p class="card-text">
+<strong>Weight: </strong>{{ customer_record.weight }}</p>
+
+<p class="card-text">
+<strong>Health Notes: </strong>{{ customer_record.health_notes }}</p>
+
+<p class="card-text">
+<strong>Create At: </strong>{{ customer_record.created_at }}</p>
+
+<p class="card-text">
+<strong>ID: </strong>{{ customer_record.id }}</p>
+    
+    
+  </div>
+</div>
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+<a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update Record</a>
+		
+
+{% endblock %}
